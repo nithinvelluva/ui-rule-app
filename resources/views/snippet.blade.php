@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">How to use ?</div>
-                <div class="card-body">
-                    <h3>To include this JS alert in your web application, just add below script in your webpage header.<h3>
-                    <br/>
+                <div class="card-header"><h2>How to use ?<h2></div>
+                <div class="card-body usage">
+                    <p>To include this JS alert in your web application, just add below script in your webpage header.</p>
+                    
                     <code>
-                        <p>{{$token}} </p>
+                        {{$token}}
                     </code>
                 </div>
             </div>

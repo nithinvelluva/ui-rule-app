@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'UI-Rules') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,6 +18,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .usage code {
+            width: 100%;
+            background: #f6f6f6;
+            display: flex;
+            color: #b75501;
+        }
+        .usage, .usage code {
+            padding: 20px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
