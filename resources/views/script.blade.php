@@ -11,17 +11,19 @@
         }
     }
 
-    let trigger = false;
+    let positiveRulesCount = 0;
+    let negativeRulesCount = 0;
     @foreach($triggers as $rule)
     if(CheckURI("{{$rule['uri']}}","{{$rule['condition']}}")){
         if({{$rule['enable_alert']}}){
-            trigger = true;
-        }else{
-            trigger = false;
+            ++positiveRulesCount;
+        }
+        else{
+            ++negativeRulesCount;
         }
     }
     @endforeach
-    if(trigger){
+    if(positiveRulesCount > 0 && negativeRulesCount === 0){
         alert(alertText);
     }
 })();
