@@ -22,8 +22,13 @@ class RulesController extends Controller
      */
     public function index()
     {
-        $rules = Rules::with('triggers')->where('user_id',auth()->user()->id)->get()->first();    
-        return view('home',["rules"=> $rules]);
+        $rules = Rules::with('triggers')->where('user_id',auth()->user()->id)->get()->first();
+        $scripturl = "";
+        if(isset($rules))
+        {
+            $scripturl = '<script src="'.env('APP_URL', 'https://ui-rules-app-interview.herokuapp.com').'/task.js?id='.$rules->token.'"></script>';
+        }
+        return view('home',["rules"=> $rules,"scripturl"=>$scripturl]);
     }
 
     /**
