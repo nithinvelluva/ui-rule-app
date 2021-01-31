@@ -76,7 +76,8 @@ class RulesController extends Controller
             ];
         }
         Triggers::insert($triggers);
-        return view('snippet',["token" => '<script src="'.env('APP_URL', 'https://ui-rules-app-interview.herokuapp.com').'/task.js?id='.$rule->token.'"></script>']);
+        return redirect()->route('home');
+        //return view('snippet',["token" => '<script src="'.env('APP_URL', 'https://ui-rules-app-interview.herokuapp.com').'/task.js?id='.$rule->token.'"></script>']);
     }
 
     /**
